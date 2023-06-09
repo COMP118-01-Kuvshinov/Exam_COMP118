@@ -1,3 +1,11 @@
+/** \file UnitTest_Exam_COMP118.cpp
+* \brief Unit test for Exam_COMP118
+* \details Tests Exam_COMP118 program
+* \author Igor Kuvshinov
+* \date 09.06.2023
+* \version v0.1
+* */
+
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../Exam_COMP118/Exam_COMP118.cpp"
