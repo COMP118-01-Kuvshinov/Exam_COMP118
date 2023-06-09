@@ -15,8 +15,11 @@ namespace UnitTestExamCOMP118
 		{
 			const double sum = 2;
 			const double matrix[MAX_ROW][MAX_COL] = {1, 0, 0, 1};
+			double res;
 
-			SumOfOnes
+			res = SumOfOnes(matrix, sum);
+
+			Assert::AreEqual(sum, res);
 		}
 	};
 }
