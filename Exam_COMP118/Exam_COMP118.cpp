@@ -39,7 +39,7 @@ int main()
         switch (choice)
         {
         case 1:
-
+            EnterData(matrix, MAX_ROW);
             break;
         case 2:
 
@@ -71,11 +71,19 @@ void EnterData(double matrix[][MAX_COL], const int rowMax)
 {
     assert(rowMax > 0 && rowMax <= MAX_ROW);
 
+    cout << "Enter data in matrix: " << endl;
     for (int i = 0; i < rowMax; i++)
     {
+        cout << "R" << i + 1 << ": " << endl;
         for (int j = 0; j < MAX_COL; j++)
         {
-
+            cin >> matrix[i][j];
+            while (matrix[i][j] < -2.5 || matrix[i][j] > 2.5)
+            {
+                cout << "Invalid input! Has to be in the range from -2.5 to 2.5: ";
+                cin >> matrix[i][j];
+            }
         }
+        cout << endl;
     }
 }
