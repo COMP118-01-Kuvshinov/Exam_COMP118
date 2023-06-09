@@ -17,7 +17,8 @@ const int MAX_COL = 3;
 
 //Function prototypes
 void EnterData(double matrix[][MAX_COL], const int rowMax);
-double SumOfAll(double matrix[][MAX_COL], const int rowMax);
+double SumOfAll(const double matrix[][MAX_COL], const int rowMax);
+void PrintMatrix(const double matrix[][MAX_COL], const int rowMax);
 
 /** <code>main</code>Main function with a menu
 * <BR>
@@ -46,7 +47,7 @@ int main()
             cout << "Sum of all numbers is " << SumOfAll(matrix, MAX_ROW) << endl;
             break;
         case 3:
-
+            PrintMatrix(matrix, MAX_ROW);
             break;
         case 4:
             break;
@@ -96,7 +97,7 @@ void EnterData(double matrix[][MAX_COL], const int rowMax)
 * @param rowMax Number of rows in the matrix
 * return Returns the sum of all numbers in the matrix
 */
-double SumOfAll(double matrix[][MAX_COL], const int rowMax)
+double SumOfAll(const double matrix[][MAX_COL], const int rowMax)
 {
     assert(rowMax > 0 && rowMax <= MAX_ROW);
 
@@ -111,4 +112,24 @@ double SumOfAll(double matrix[][MAX_COL], const int rowMax)
     }
 
     return sum;
+}
+
+/** <code>PrintMatrix</code> Function that prints the matrix
+* <BR>
+* @param matrix Array of numbers
+* @param rowMax Number of rows in the matrix
+*/
+void PrintMatrix(const double matrix[][MAX_COL], const int rowMax)
+{
+    assert(rowMax > 0 && rowMax <= MAX_ROW);
+
+    for (int i = 0; i < rowMax; i++)
+    {
+        cout << "R" << i + 1 << ": ";
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
