@@ -19,6 +19,7 @@ const int MAX_COL = 3;
 void EnterData(double matrix[][MAX_COL], const int rowMax);
 double SumOfAll(const double matrix[][MAX_COL], const int rowMax);
 void PrintMatrix(const double matrix[][MAX_COL], const int rowMax);
+double SumOfOnes(const double matrix[][MAX_COL], const int rowMax);
 
 /** <code>main</code>Main function with a menu
 * <BR>
@@ -34,7 +35,8 @@ int main()
         cout << "1) Enter data in matrix (range -2.5 to 2.5)" << endl
             << "2) Sum of all numbers" << endl
             << "3) Show data in matrix" << endl
-            << "4) Exit" << endl
+            << "4) Sum of all ones" << endl
+            << "5) Exit" << endl
             << "Please enter your choice: ";
         cin >> choice;
 
@@ -50,6 +52,9 @@ int main()
             PrintMatrix(matrix, MAX_ROW);
             break;
         case 4:
+            cout << "Sum of all ones is " << SumOfOnes(matrix, MAX_ROW) << endl;
+            break;
+        case 5:
             break;
         default:
             cout << "Invalid input!" << endl;
@@ -57,7 +62,7 @@ int main()
         }
 
         cout << endl;
-    } while (choice != 4);
+    } while (choice != 5);
     
     cout << "Have a nice day!" << endl;
 
@@ -132,4 +137,31 @@ void PrintMatrix(const double matrix[][MAX_COL], const int rowMax)
         }
         cout << endl;
     }
+}
+
+/** <code>SumOfOnes</code> Function that returns a sum of
+* all ones in the matrix
+* <BR>
+* @param matrix Array of numbers
+* @param rowMax Number of rows in the matrix
+* return Returns the sum of all ones in the matrix
+*/
+double SumOfOnes(const double matrix[][MAX_COL], const int rowMax)
+{
+    assert(rowMax > 0 && rowMax <= MAX_ROW);
+
+    double sum = 0;
+
+    for (int i = 0; i < rowMax; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            if (matrix[i][j] == 1)
+            {
+                sum += matrix[i][j];
+            }
+        }
+    }
+
+    return sum;
 }
