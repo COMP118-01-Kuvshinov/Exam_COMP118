@@ -10,7 +10,7 @@ namespace UnitTestExamCOMP118
 	TEST_CLASS(UnitTestExamCOMP118)
 	{
 	public:
-		
+	
 		TEST_METHOD(TestMethodSumOfOnes)
 		{
 			const double sum = 2;
