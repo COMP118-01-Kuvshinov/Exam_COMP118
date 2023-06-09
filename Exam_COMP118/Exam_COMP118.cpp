@@ -16,11 +16,12 @@ const int MAX_ROW = 4;
 const int MAX_COL = 3;
 
 //Function prototypes
-void EnterData(double matrix[][MAX_COL], int rowMax);
+void EnterData(double matrix[][MAX_COL], const int rowMax);
+double SumOfAll(double matrix[][MAX_COL], const int rowMax);
 
 /** <code>main</code>Main function with a menu
 * <BR>
-* Return Returns 0
+* return Returns 0
 */
 int main()
 {
@@ -42,7 +43,7 @@ int main()
             EnterData(matrix, MAX_ROW);
             break;
         case 2:
-
+            cout << "Sum of all numbers is " << SumOfAll(matrix, MAX_ROW) << endl;
             break;
         case 3:
 
@@ -66,6 +67,7 @@ int main()
 * input values into a matrix
 * <BR>
 * @param matrix Array of numbers
+* @param rowMax Number of rows in the matrix
 */
 void EnterData(double matrix[][MAX_COL], const int rowMax)
 {
@@ -84,6 +86,29 @@ void EnterData(double matrix[][MAX_COL], const int rowMax)
                 cin >> matrix[i][j];
             }
         }
-        cout << endl;
     }
+}
+
+/** <code>SumOfAll</code> Function that returns a sum of
+* all numbers in the matrix
+* <BR>
+* @param matrix Array of numbers
+* @param rowMax Number of rows in the matrix
+* return Returns the sum of all numbers in the matrix
+*/
+double SumOfAll(double matrix[][MAX_COL], const int rowMax)
+{
+    assert(rowMax > 0 && rowMax <= MAX_ROW);
+
+    double sum = 0;
+
+    for (int i = 0; i < rowMax; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            sum += matrix[i][j];
+        }
+    }
+
+    return sum;
 }
