@@ -70,7 +70,7 @@ int main()
 }
 
 /** <code>EnterData</code> Function that asks a user to
-* input values into a matrix
+* input values into a matrix in the range -2.5 to 2.5 included
 * <BR>
 * @param matrix Array of numbers
 * @param rowMax Number of rows in the matrix
